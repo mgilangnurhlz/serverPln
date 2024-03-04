@@ -1,0 +1,54 @@
+POST http://localhost:5002/users
+Content-Type: application/json
+
+{
+    "name": "ardi2",
+    "email": "ardi23@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "user"
+}
+###
+
+PATCH  http://localhost:5002/users/d37db6ae-029b-4a62-a8ef-0dbb0b31e770
+Content-Type: application/json
+
+{
+    "name": "gilangNur",
+    "email": "mgilangnurhaliz.apple@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+}
+
+
+###
+DELETE  http://localhost:5002/users/c9487ff7-cea2-45bf-a391-cdca952d77b5
+
+###
+POST http://localhost:5002/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "123456"
+}
+
+### 
+GET http://localhost:5002/me
+
+### 
+DELETE  http://localhost:5002/logout
+
+
+
+
+###
+Get http://localhost:5002/barangs
+
+###
+GET http://localhost:5002/users
+
+
+###
+Delete http://localhost:5002/barangs/1
