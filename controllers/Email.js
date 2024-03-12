@@ -39,7 +39,7 @@ async function sendEmail(record, recipients) {
   let info = await transporter.sendMail({
     from: '"Maintenance" <mgilangnurhaliz@gmail.com>',
     to: recipients.join(","), // Join the recipients array into a comma-separated string
-    subject: `Pengingat: Penggantian Diperlukan untuk Barang ${record.name} dengan Kode ${record.code}`, // Set subject as per your requirement
+    subject: `Pengingat: Pemeliharaan Diperlukan untuk Barang ${record.name} dengan Kode ${record.code}`, // Set subject as per your requirement
     html: `
     <p>Dear <strong> ${record.user.name},</strong> </p>
     <p>Kami ingin mengingatkan Anda mengenai status barang berikut di inventaris kami yang memerlukan penggantian atau perbaikan:</p>
@@ -47,9 +47,9 @@ async function sendEmail(record, recipients) {
     <p><strong>Kode Barang:</strong> ${record.code}</p>
     <p><strong>Lokasi Barang:</strong> ${record.location}</p>
     <p><strong>Tanggal Pemasangan:</strong> ${formattedDateIn}</p>
-    <p><strong>Tanggal Penggantian:</strong> ${formattedDateOut}</p>
+    <p><strong>Tanggal Pemeliharaan:</strong> ${formattedDateOut}</p>
     <p>Mohon perhatikan hal ini untuk kelancaran operasional kami. Harap tinjau kondisi barang dan lakukan tindakan yang diperlukan. Pertanyaan atau bantuan lebih lanjut, hubungi departemen pemeliharaan kami. Terima kasih atas kerjasama Anda dalam menjaga standar peralatan kami.</p>
-    <p>Salam hormat, Admin ElctraCare</p>
+    <p>Salam hormat, ElctraCare</p>
     `,
     attachments: [
       {

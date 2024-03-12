@@ -4,7 +4,15 @@ import argon2 from "argon2";
 export const getUsers = async (req, res) => {
   try {
     const response = await User.findAll({
-      attributes: ["uuid", "name", "email", "role", "office", "division"],
+      attributes: [
+        "uuid",
+        "name",
+        "email",
+        "role",
+        "office",
+        "division",
+        "status",
+      ],
     });
     res.status(200).json(response);
   } catch (error) {
@@ -15,7 +23,15 @@ export const getUsers = async (req, res) => {
 export const getUserById = async (req, res) => {
   try {
     const response = await User.findOne({
-      attributes: ["uuid", "name", "email", "role", "office", "division"],
+      attributes: [
+        "uuid",
+        "name",
+        "email",
+        "role",
+        "office",
+        "division",
+        "status",
+      ],
       where: {
         uuid: req.params.id,
       },
@@ -27,8 +43,16 @@ export const getUserById = async (req, res) => {
 };
 
 export const createUser = async (req, res) => {
-  const { name, email, password, confPassword, role, office, division } =
-    req.body;
+  const {
+    name,
+    email,
+    password,
+    confPassword,
+    role,
+    office,
+    division,
+    status,
+  } = req.body;
 
   const existingUser = await User.findOne({ where: { email } });
   if (existingUser) {
@@ -47,6 +71,7 @@ export const createUser = async (req, res) => {
       role: role,
       office: office,
       division: division,
+      status: status,
     });
     res.status(201).json({ msg: "Register Successful" });
   } catch (error) {
@@ -61,8 +86,16 @@ export const updateUser = async (req, res) => {
     },
   });
   if (!user) return res.status(404).json({ msg: "User not found" });
-  const { name, email, password, confPassword, role, office, division } =
-    req.body;
+  const {
+    name,
+    email,
+    password,
+    confPassword,
+    role,
+    office,
+    division,
+    status,
+  } = req.body;
   let hashPassword;
 
   const existingUser = await User.findOne({ where: { email } });
@@ -88,6 +121,7 @@ export const updateUser = async (req, res) => {
         role: role,
         office: office,
         division: division,
+        status: status,
       },
       {
         where: {

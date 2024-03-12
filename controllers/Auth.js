@@ -8,6 +8,12 @@ export const Login = async (req, res) => {
     },
   });
   if (!user) return res.status(404).json({ msg: "User not found" });
+
+  if (user.status !== "active") {
+    return res
+      .status(403)
+      .json({ msg: "User is not active. Please contact administrator" });
+  }
   const match = await argon2.verify(user.password, req.body.password); //? validasi password yang dikirim dengan password di database
   if (!match) return res.status(400).json({ msg: "Wrong Password!!!" });
   req.session.userId = user.uuid;
