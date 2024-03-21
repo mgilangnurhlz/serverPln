@@ -15,7 +15,7 @@ const Users = db.define(
       },
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
       validate: {
         notEmpty: true,
@@ -38,28 +38,28 @@ const Users = db.define(
       },
     },
     role: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10),
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
     office: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10),
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
     division: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
     status: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10),
       allowNull: false,
       validate: {
         notEmpty: true,

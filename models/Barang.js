@@ -8,10 +8,11 @@ const Barang = db.define(
   "barang",
   {
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
       validate: {
         notEmpty: true,
+        len: [3, 50],
       },
     },
     image: {
@@ -29,14 +30,14 @@ const Barang = db.define(
       },
     },
     code: {
-      type: DataTypes.CHAR(20),
+      type: DataTypes.CHAR(12),
       allowNull: true,
       validate: {
         notEmpty: true,
       },
     },
     location: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: false,
       validate: {
         notEmpty: true,
