@@ -1,6 +1,6 @@
 ### Clone repository dan masuk folder
 ```sh
-git clone [https://github.com/mgilangnurhlz/2223-IF215007_8-pengembangan-aplikasi-web.git](https://github.com/mgilangnurhlz/serverPln.git)
+git clone clone https://github.com/mgilangnurhlz/serverPln.git
 ```
 
 ### Install node module dan library
