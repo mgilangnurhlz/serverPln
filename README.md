@@ -1,6 +1,6 @@
 ### Clone repository dan masuk folder backend
 ```sh
-git clone https://github.com/mgilangnurhlz/2223-IF215007_8-pengembangan-aplikasi-web.git
+git clone [https://github.com/mgilangnurhlz/2223-IF215007_8-pengembangan-aplikasi-web.git](https://github.com/mgilangnurhlz/serverPln.git)
 ```
 
 ### Install node module dan library
@@ -26,4 +26,18 @@ DB_HOST = "localhost"
 ### Jalankan program
 ```sh
 nodemon index.js
+```
+
+### Membuat Admin
+```json
+{
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin",
+    "office": "UPT",
+    "division": "IT",
+    "status": "active"
+}
 ```
